@@ -1,0 +1,50 @@
+@import './mixin';
+
+body {
+    font-size: 1.6rem;
+    color: $color-teal-500;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;   
+    color: $color-teal-100;
+    text-transform: uppercase;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: $color-teal-100;
+    font-weight: 300;
+  }
+  
+  h3 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    text-transform: capitalize;
+    text-shadow: 1px 1px 2px black;
+    line-height: 40px;
+  }
+
+  h4 {
+    font-size: 3rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: $color-teal-500;
+    line-height: 5rem;
+  }
+
+  p {
+    line-height: 2.2rem;
+  }
+
+  ul, li {
+    line-height: 2.2rem;
+  }
+
+  b {
+    font-weight: bold;
+  }

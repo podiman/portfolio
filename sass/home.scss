@@ -1,0 +1,324 @@
+@import "./variables";
+@import "./types";
+@import "./mixin";
+
+main {
+  background-image: url("/images/toronto-bg-andre-furtado_grey.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  @include for-tablet-landscape-up {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.main-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  & .description {
+    & h3 {
+      font-size: 4vh;
+      font-weight: 500;
+      line-height: 10vh;
+      padding-left: 1vh;
+      @include for-tablet-portrait-up {
+        padding-left: 0;
+        font-size: 3rem;
+        font-weight: 700;
+        line-height: 4rem;
+      }
+    }
+  }
+}
+
+.button {
+  padding: 0.4em 0.8rem;
+  line-height: 10rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-right: 2rem;
+  margin-left: 1rem;
+  &-outline {
+    border-width: 1px;
+    border-style: solid;
+  }
+  &-white {
+    color: $color-white-alpha-800;
+    &:hover {
+      color: white;
+    }
+  }
+  @include for-tablet-landscape-up {
+    display: none;
+    margin-left: 0;
+  }
+}
+
+.contact-me {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.contact-details {
+  padding: 2rem;
+  background-color: white;
+  opacity: 0.8;
+  & table {
+    margin-top: 2rem;
+    & td {
+      padding: 1rem;
+    }
+    & td:first-child {
+      display: none;
+      padding-right: 2rem;
+      @include for-tablet-landscape-up {
+        display: flex;
+      }
+    }
+    & td:last-child {
+      color: $color-teal-400;
+    }
+  }
+  @include for-tablet-landscape-up {
+    padding: 5rem;
+  }
+}
+
+.side-bar {
+  display: flex;
+  flex-direction: row;
+  background-color: $color-teal-400;
+  width: 100%;
+  height: 5rem;
+  justify-content: space-between;
+  @include for-tablet-landscape-up {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: stretch;
+    justify-content: space-around;
+    width: 25%;
+    min-height: 100%;
+    height: 100vh;
+    opacity: 0.8;
+  }
+  & .profile {
+    align-self: center;
+    @include for-tablet-landscape-up {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    & .profile-img {
+      display: flex;
+      align-content: center;
+      height: 4rem;
+      width: 4rem;
+      border-radius: 50%;
+      margin-left: 2rem;
+      @include for-tablet-landscape-up {
+        margin-top: 5rem;
+        margin-bottom: 2rem;
+        margin-left: 0;
+        width: 125px;
+        height: 125px;
+        opacity: 1;
+      }
+    }
+    & .name {
+      display: none;
+      @include for-tablet-landscape-up {
+        display: flex;
+        padding-top: 3%;
+        padding-bottom: 3%;
+        text-align: center;
+      }
+    }
+    & .designation {
+      display: none;
+      @include for-tablet-landscape-up {
+        display: flex;
+        text-align: center;
+        padding-bottom: 3%;
+      }
+    }
+  }
+  & .side-bar-list-items {
+    display: none;
+    @include for-tablet-landscape-up {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      width: 100%;
+      text-transform: uppercase;
+      line-height: 30px;
+      &__links {
+        li {
+          padding-left: 3rem;
+          flex: 1;
+          a {
+            text-decoration: none;
+            color: $color-teal-500;
+            &:hover {
+              color: white;
+              cursor: pointer;
+              &::after {
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                content: " \f054";
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  & .social-media {
+    display: flex;
+    flex-direction: row;
+    margin-right: 1.5rem;
+    align-items: center;
+    font-size: $x-large;
+    @include for-tablet-landscape-up {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-right: 0;
+      justify-content: space-around;
+    }
+    &__links {
+      display: flex;
+      flex-direction: row;
+      margin-right: 2rem;
+      @include for-tablet-landscape-up {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-right: 0;
+        width: 75%;
+      }
+      li {
+        margin-right: 0.75rem;
+        a {
+          text-decoration: none;
+          color: $color-white-alpha-600;
+          &:hover {
+            color: white;
+          }
+        }
+      }
+    }
+    &__title {
+      display: none;
+      @include for-tablet-landscape-up {
+        display: flex;
+        line-height: 3rem;
+        color: $color-teal-200;
+        font-weight: 500;
+      }
+    }
+  }
+
+  & .menu {
+    align-self: center;
+    margin-right: 2rem;
+    font-size: x-large;
+    & .hamburger {
+      display: flex;        
+      flex-direction: column;
+      color: $color-white-alpha-600;      
+      cursor: pointer;
+      &:hover {
+        color: white;
+      }
+    }
+    @include for-tablet-landscape-up {
+      display: none;
+    }
+  }
+}
+
+.menu-links {
+  overflow: hidden;
+  background: $color-teal-500;
+  text-align: end;
+  padding-right: 2rem;
+  width: 100%;
+  clip-path: inset(0px 0px 100px 0px);
+  -webkit-clip-path: inset(0px 0px 100px 0px);
+  transition: all 1s ease-in-out;
+  & li a {
+    line-height: 3rem;
+    padding-right: 2rem;
+    text-decoration: none;
+    color: $color-white-alpha-600;
+    text-transform: uppercase;
+    font-size: medium;
+    &:hover {
+      color: white;
+    }
+  }
+  @include for-tablet-landscape-up {
+    display: none;
+  }
+}
+
+.menu-links.open {
+  height: 7.5rem;
+  clip-path: inset(0px 0px 0px 0px);
+  -webkit-clip-path:inset(0px 0px 0px 0px);
+}
+
+.intro {
+  background: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slider {
+  background: rgb(97, 105, 109);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(100%);
+}
+
+.intro-text {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.hide {
+  background: black;
+  overflow: hidden;
+}
+
+.hide span {
+  transform: translateY(100%);
+  display: inline-block;
+  line-height: 4rem;
+}

@@ -3,7 +3,7 @@
 @import "./mixin";
 
 main {
-  background-image: url("/images/toronto-bg-andre-furtado_grey.jpg");
+  background-image: url("/images/bg-toronto-large.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
@@ -73,12 +73,15 @@ main {
   justify-content: center;
   width: 100%;
   height: 100vh;
+  p {
+    color: $color-teal-500;
+  }
 }
 
 .contact-details {
   padding: 2rem;
   background-color: white;
-  opacity: 0.8;
+  opacity: 0.9;
   & table {
     margin-top: 2rem;
     & td {

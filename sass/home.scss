@@ -256,7 +256,74 @@ main {
       display: none;
     }
   }
+
+  & .menu-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+    width: 24px;
+    height: 20px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    @include for-tablet-landscape-up {
+      display: none;
+    }
+  }
+
+  & .menu-btn__burger {
+    width: 24px;
+    height: 4px;
+    background-color: $color-white-alpha-600;
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+    &:hover{
+      background-color: white;
+    }
+    @include for-tablet-landscape-up {
+      display: none;
+    }
+  }
+
+  .menu-btn__burger::before,
+  .menu-btn__burger::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 4px;
+    background-color: $color-white-alpha-600;
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+  }
+
+  .menu-btn__burger::before {
+    transform: translateY(-7px);
+  }
+
+  .menu-btn__burger::after {
+    transform: translateY(7px);
+  }
+
+  .menu-btn.open .menu-btn__burger {
+    transform: translateX(20px);
+    background: transparent;
+  }
+
+  .menu-btn.open .menu-btn__burger::before {
+    transform: rotate(45deg) translate(-14px, 14px);
+  }
+
+  .menu-btn.open .menu-btn__burger::after {
+    transform: rotate(-45deg) translate(-14px, -14px);
+  }
+
+  .menu-btn__burger:hover:after,
+  .menu-btn__burger:hover:before {
+    background-color: white;
+  }
 }
+
+
 
 .menu-links {
   overflow: hidden;

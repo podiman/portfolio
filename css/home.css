@@ -40,7 +40,7 @@ b {
   font-weight: bold; }
 
 main {
-  background-image: url("/images/toronto-bg-andre-furtado_grey.jpg");
+  background-image: url("/images/bg-toronto-large.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
@@ -255,6 +255,52 @@ main {
     @media (min-width: 900px) {
       .side-bar .menu {
         display: none; } }
+  .side-bar .menu-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+    width: 24px;
+    height: 20px;
+    cursor: pointer;
+    transition: all .5s ease-in-out; }
+    @media (min-width: 900px) {
+      .side-bar .menu-btn {
+        display: none; } }
+  .side-bar .menu-btn__burger {
+    width: 24px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    transition: all .5s ease-in-out; }
+    .side-bar .menu-btn__burger:hover {
+      background-color: white; }
+    @media (min-width: 900px) {
+      .side-bar .menu-btn__burger {
+        display: none; } }
+  .side-bar .menu-btn__burger::before,
+  .side-bar .menu-btn__burger::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    transition: all .5s ease-in-out; }
+  .side-bar .menu-btn__burger::before {
+    transform: translateY(-7px); }
+  .side-bar .menu-btn__burger::after {
+    transform: translateY(7px); }
+  .side-bar .menu-btn.open .menu-btn__burger {
+    transform: translateX(20px);
+    background: transparent; }
+  .side-bar .menu-btn.open .menu-btn__burger::before {
+    transform: rotate(45deg) translate(-14px, 14px); }
+  .side-bar .menu-btn.open .menu-btn__burger::after {
+    transform: rotate(-45deg) translate(-14px, -14px); }
+  .side-bar .menu-btn__burger:hover:after,
+  .side-bar .menu-btn__burger:hover:before {
+    background-color: white; }
 
 .menu-links {
   overflow: hidden;
